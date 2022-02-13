@@ -52,16 +52,6 @@ export class News extends Component {
         this.updateNews(0);
     }
 
-    // handlePrevClick = async () => {
-    //     this.setState({ page: this.state.page - 1 })
-    //     this.updateNews(-1)
-    // }
-
-    // handleNextClick = async () => {
-    //     this.setState({ page: this.state.page + 1 })
-    //     this.updateNews(1)
-    // }
-
     fetchMoreData = async () => {
         this.setState({ page: this.state.page + 1 })
         const res = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`);
@@ -101,11 +91,6 @@ export class News extends Component {
                         </div>
                     </div>
                 </InfiniteScroll>
-
-                {/* <div className="container d-flex justify-content-around my-3">
-                    <button disabled={this.state.page <= 1} className="btn-primary btn" style={{ display: `${this.state.loading === true ? 'none' : 'block'}` }} onClick={this.handlePrevClick}>&larr; Previous</button>
-                    <button disabled={this.state.page === this.state.totalPages} className="btn-primary btn" style={{ display: `${this.state.loading === true ? 'none' : 'block'}` }} onClick={this.handleNextClick}>Next &rarr;</button>
-                </div> */}
             </ >
         )
     }
