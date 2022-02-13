@@ -3,7 +3,7 @@ const NewsItem = ({ title, description, imageUrl, newsUrl, author, date, source 
 
     return (
       <>
-        <div className="card my-3">
+        <div className="card my-3"> 
           <div className='d-flex justify-content-end position-absolute' style={{right: '0'}}>
             <span className="badge round-pill bg-danger" >{source}</span>
           </div>
